@@ -17,7 +17,7 @@ My take on the https://www.kaggle.com/joniarroba/noshowappointments dataset
 * src
 * data
 
-Inspired by [Jupyter Notebook Best Practices for Data Science](https://www.svds.com/jupyter-notebook-best-practices-for-data-science/)
+Repository structure inspired by [Jupyter Notebook Best Practices for Data Science](https://www.svds.com/jupyter-notebook-best-practices-for-data-science/)
 
 
 #NoShows
