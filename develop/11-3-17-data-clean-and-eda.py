@@ -5,7 +5,7 @@
 
 # import dependencies 
 
-# In[82]:
+# In[2]:
 
 
 import pandas as pd
@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 
 
-# In[83]:
+# In[3]:
 
 
 data = pd.read_csv("../data/KaggleV2-May-2016.csv")
@@ -25,7 +25,7 @@ data.head()
 
 # correcting misspelled columns
 
-# In[84]:
+# In[4]:
 
 
 data.rename(columns = {'Hipertension':'Hypertension',
@@ -39,7 +39,7 @@ data.head()
 
 # Now trying to understand the data set. It's distributions and unique values. Also attempting to find funky and incorrect data points. I want to understand and check the integrity of the dataset
 
-# In[85]:
+# In[5]:
 
 
 data.PatientID.value_counts()
@@ -47,19 +47,19 @@ data.PatientID.value_counts()
 
 # making sure there arent duplicate appointment IDs
 
-# In[86]:
+# In[6]:
 
 
 data.AppointmentID.value_counts()
 
 
-# In[87]:
+# In[7]:
 
 
 data.Gender.unique()
 
 
-# In[88]:
+# In[8]:
 
 
 data.Gender.value_counts()
@@ -67,7 +67,7 @@ data.Gender.value_counts()
 
 # trying to understand my timeline
 
-# In[89]:
+# In[9]:
 
 
 #UNCOMMENT FOR FINAL RUN THROUGH
@@ -76,13 +76,13 @@ data.Gender.value_counts()
     #print(i)
 
 
-# In[90]:
+# In[10]:
 
 
 data.AppointmentDay.unique()
 
 
-# In[91]:
+# In[11]:
 
 
 data.Age.value_counts()
@@ -90,49 +90,49 @@ data.Age.value_counts()
 
 # need to get rid of negative value. It is impossible for someone to be -1.  
 
-# In[92]:
+# In[12]:
 
 
 data['Age'][data['Age'] < 0] = 1
 
 
-# In[93]:
+# In[13]:
 
 
 data.Age.value_counts()
 
 
-# In[94]:
+# In[14]:
 
 
 data.Scholarship.value_counts()
 
 
-# In[95]:
+# In[15]:
 
 
 data.Hypertension.value_counts()
 
 
-# In[96]:
+# In[16]:
 
 
 data.Diabetes.value_counts()
 
 
-# In[97]:
+# In[17]:
 
 
 data.Handicap.value_counts()
 
 
-# In[98]:
+# In[18]:
 
 
 data.SMS_received.value_counts()
 
 
-# In[99]:
+# In[19]:
 
 
 data.NoShow.value_counts()
@@ -140,13 +140,13 @@ data.NoShow.value_counts()
 
 # making sure there aren't any values missing in the dataset
 
-# In[100]:
+# In[20]:
 
 
 data.isnull().sum()
 
 
-# In[101]:
+# In[21]:
 
 
 print('Age:',sorted(data.Age.unique()))
@@ -165,8 +165,14 @@ print('SMS_received:',data.SMS_received.unique())
 #print('HourOfTheDay:', sorted(data.HourOfTheDay.unique()))
 
 
-# In[102]:
+# In[22]:
 
 
 data.head()
+
+
+# In[24]:
+
+
+data.to_csv("../data/post-cleanandeda.csv")
 
